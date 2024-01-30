@@ -2,6 +2,8 @@ import org.example.Koans;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 public class KoansTest {
 
     @Test
@@ -35,6 +37,16 @@ public class KoansTest {
         String expected = "HELLO JERRY!";
 
         String actual = Koans.greet(inputName);
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    void testGreetingWithMultipleNames(){
+        String[] names = {"Jill", "Jane"};
+        String expected = "Hello, Jill and Jane";
+
+        String actual = Koans.greet(names);
 
         Assertions.assertEquals(expected, actual);
     }
